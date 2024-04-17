@@ -11,7 +11,7 @@ import (
 
 const (
 	dbDriver = "postgres"
-	dbSource = "postgresql://root:secret@localhost:5432/simple_bank2?sslmode=disable"
+	dbSource = "postgresql://root:123456@localhost:5432/simple_bank?sslmode=disable"
 )
 
 var testQueries *Queries
@@ -27,5 +27,4 @@ func TestMain(m *testing.M) {
 
 	testQueries = New(testDB)
 	os.Exit(m.Run())
-
 }
