@@ -40,6 +40,13 @@ jobs:
       - name: Check out code into the Go directory
         uses: actions/setup-go@v4
 
+      - name: Install goland migration
+        run: |
+          curl -L https://github.com/golang-migrate/migrate/releases/download/v4.17.0/migrate.darwin-amd64.tar.gz | tar xvz
+          sudo mv migrate.darwin-amd64 /usr/bin/
+          which migrate
+          
+
       - name: Run migration
         run: make migrateup
 
